@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const base = require('./webpack.base.config');
+const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
 module.exports = merge(base, {
     entry: {
@@ -24,9 +25,10 @@ module.exports = merge(base, {
         }),
         new HtmlWebpackPlugin({
             title: '完美后台关系管理系统',
-            filename: 'index.html',
+            filename: 'template.html',
             template: 'dist/html/template.html',
             inject: 'body'
         }),
+        new VueSSRClientPlugin()
     ]
 });

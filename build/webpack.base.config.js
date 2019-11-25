@@ -1,11 +1,11 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const HappyPack = require('happypack');
 const os = require('os');
 const happyThreadPool = HappyPack.ThreadPool({size: os.cpus().length});
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
+// const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 const fs = require('fs');
 let envType = process.env.ENV_TYPE;
 let content = `let env = "${envType}";
@@ -149,9 +149,9 @@ module.exports = {
     stats: "errors-only",  // lets you precisely control what bundle information gets displayed
     plugins: [
         new CleanWebpackPlugin({cleanOnceBeforeBuildPatterns: ['!static']}),
-        new BundleAnalyzerPlugin({analyzerPort: 8919}),
+        // new BundleAnalyzerPlugin({analyzerPort: 8919}),
         new VueLoaderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
+        // new webpack.HotModuleReplacementPlugin(),
         new HappyPack({
             //用id来标识 happypack处理那里类文件
             id: 'babel',

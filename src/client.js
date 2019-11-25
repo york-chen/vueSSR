@@ -1,5 +1,14 @@
-import { createApp } from '@/app.js';
-
-const { app } = createApp();
-
-app.$mount('#app');
+import {
+    createApp
+} from '@/app.js';
+const {
+    app,
+    router,
+    store
+} = createApp();
+router.onReady(() => {
+    if (window.__INITIAL_STATE__) {
+        store.replaceState(window.__INITIAL_STATE__)
+    }
+    app.$mount('#app')
+})

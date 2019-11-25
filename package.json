@@ -43,10 +43,11 @@
         "webpack-bundle-analyzer": "^3.3.2",
         "webpack-cli": "^3.1.2",
         "webpack-dev-server": "^3.1.14",
-        "webpack-merge": "^4.2.2"
+        "webpack-merge": "^4.2.2",
+        "webpack-node-externals": "^1.7.2"
     },
     "scripts": {
-        "start": "node --experimental-modules app.mjs",
+        "start": "node app.js",
         "build:client": "cross-env ENV_TYPE=production webpack --config build/webpack.client.js --progress --color",
         "build:serve": "cross-env ENV_TYPE=production webpack --config build/webpack.server.js --progress --color",
         "dll:dev": "cross-env ENV_TYPE=development webpack --config build/webpack.dll.config.js",
